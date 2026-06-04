@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_card.css"></head><body><div class="pad">
+  <p class="eyebrow">Buttons</p>
+  <div class="row" style="gap:12px;margin-bottom:14px">
+    <button class="btn primary">deploy ❯</button>
+    <button class="btn ghost">view logs</button>
+    <button class="btn danger">destroy</button>
+    <button class="btn ghost" disabled>disabled</button>
+  </div>
+  <p class="tok">primary = green fill · ghost = hairline · press shrinks 1px · focus = green ring</p><style>.btn{font-family:var(--font-mono);font-size:13px;font-weight:500;padding:9px 16px;border-radius:2px;border:1px solid transparent;cursor:pointer;letter-spacing:.02em;transition:all .12s ease}
+.btn.primary{background:var(--green);color:#04130A;font-weight:600}
+.btn.primary:hover{background:var(--green-bright)}
+.btn.ghost{background:transparent;border-color:var(--line-strong);color:var(--fg-1)}
+.btn.ghost:hover{border-color:var(--green);color:var(--green);background:var(--wash-green)}
+.btn.danger{background:transparent;border-color:var(--red-dim);color:var(--red)}
+.btn.danger:hover{background:rgba(242,112,110,.1)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}</style></body></html>

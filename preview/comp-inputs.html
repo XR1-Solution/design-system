@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_card.css"></head><body><div class="pad">
+  <p class="eyebrow">Form fields</p>
+  <div class="col" style="gap:12px;max-width:380px">
+    <div><div class="lbl">PROJECT NAME</div><div class="field"><span class="pfx">xr1 ❯</span><input value="atlas-core" spellcheck="false"></div></div>
+    <div><div class="lbl">ENVIRONMENT</div><div class="field focus"><span class="pfx">xr1 ❯</span><input value="production" spellcheck="false"><span class="cur">█</span></div></div>
+  </div><style>.lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--fg-3);margin-bottom:6px}
+.field{display:flex;align-items:center;gap:8px;background:var(--bg-inset);border:1px solid var(--line);border-radius:2px;padding:9px 12px}
+.field.focus{border-color:var(--green);box-shadow:0 0 0 3px var(--glow-green)}
+.pfx{color:var(--green);font-size:13px}
+.field input{flex:1;background:none;border:none;outline:none;color:var(--fg-0);font-family:var(--font-mono);font-size:14px}
+.cur{color:var(--green);animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}</style></body></html>
