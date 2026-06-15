@@ -14,14 +14,18 @@
   --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; /* body / UI / code */
   --font-pixel:   'Silkscreen', 'JetBrains Mono', monospace; /* micro labels, eyebrows, badges */
 
-  /* ---- Type scale (px) ------------------------------------------------- */
-  --text-2xs: 11px;
-  --text-xs:  12px;
-  --text-sm:  13px;
-  --text-base:15px;
-  --text-md:  16px;
-  --text-lg:  18px;
-  --text-xl:  22px;
+  /* ---- Type scale (px) — sharp, mono-first ---------------------------- */
+  --text-2xs: 10px;   /* pixel labels, table heads */
+  --text-xs:  11px;   /* kbd, meta, captions */
+  --text-sm:  13px;   /* dense UI, secondary body */
+  --text-base:15px;   /* default body (root size) */
+  --text-md:  17px;
+  --text-lg:  20px;   /* lead, dialog titles */
+  --text-xl:  24px;
+  --text-2xl: 32px;   /* display headings */
+  --text-3xl: 44px;
+  --text-4xl: 60px;   /* hero numerals */
+  /* large display ramp (Pixelify Sans hero / splash) */
   --display-sm: 32px;
   --display-md: 48px;
   --display-lg: 72px;
@@ -33,6 +37,17 @@
   --lh-body:  1.6;
   --track-label: 0.14em;   /* uppercase mono eyebrows */
   --track-tight: -0.01em;  /* large display */
+
+  /* semantic leading / tracking (Braidmux-aligned) */
+  --leading-tight:  1.2;
+  --leading-snug:   1.4;
+  --leading-normal: 1.6;
+  --leading-loose:  1.7;    /* terminal log lines */
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.02em; /* buttons */
+  --tracking-label:  0.1em;  /* pixel labels */
+  --tracking-caps:   0.14em; /* uppercase mono labels */
 
   /* ---- Backgrounds (deep → raised) ------------------------------------ */
   --bg-0: #0A0C0D;   /* page / canvas */
@@ -103,16 +118,60 @@
   --ring-focus: 0 0 0 1px var(--green), 0 0 0 4px var(--glow-green);
   --glow-soft: 0 0 24px var(--glow-green);
 
-  /* ---- Motion ---------------------------------------------------------- */
-  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --ease-step: steps(1, end);         /* hard, terminal-style blink/toggle */
+  /* ---- Motion — fast, mechanical, no bounce ---------------------------- */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);  /* sharp ease-out, no overshoot */
+  --ease-step: steps(1, end);              /* hard, terminal-style blink/toggle */
   --dur-1: 90ms;
   --dur-2: 160ms;
   --dur-3: 260ms;
+  /* semantic durations (Braidmux-aligned) */
+  --dur-fast: 100ms;
+  --dur-mid:  160ms;
+  --dur-slow: 240ms;
 
   /* ---- Misc ------------------------------------------------------------ */
   --grid-cell: 8px;        /* TUI character-cell rhythm */
   --scanline: rgba(255,255,255,0.015);
+
+  /* ====================================================================
+     SEMANTIC ALIAS LAYER — Braidmux-aligned roles. Reach for these in
+     product code; the raw --bg / --fg / --line / --green ramps stay the
+     source of truth, these just name the intent.
+     ==================================================================== */
+  /* surfaces (by elevation) */
+  --surface-well:    var(--bg-inset);
+  --surface-canvas:  var(--bg-0);
+  --surface-card:    var(--bg-1);
+  --surface-raised:  var(--bg-2);
+  --surface-control: var(--bg-3);
+
+  /* borders */
+  --border-faint:    var(--line-faint);
+  --border-default:  var(--line);
+  --border-strong:   var(--line-strong);
+  --border-hairline: 1px;
+  --border-accent:   2px;    /* left rule on alerts / active nav */
+
+  /* text (by emphasis) */
+  --text-bright:    var(--fg-0);
+  --text-body:      var(--fg-1);
+  --text-secondary: var(--fg-2);
+  --text-muted:     var(--fg-3);
+  --text-dim:       var(--fg-4);
+
+  /* accent (the one phosphor green) */
+  --accent-hover:   var(--green-bright);
+  --accent-pressed: var(--green-dim);
+
+  /* status (terminal ANSI family) */
+  --status-online:   var(--green);
+  --status-building: var(--amber);
+  --status-failed:   var(--red);
+  --status-idle:     var(--fg-4);
+
+  /* focus + floating elevation */
+  --focus-ring:   var(--glow-green);
+  --shadow-float: 0 18px 50px -16px rgba(0,0,0,0.85);
 }
 
 /* ============================================================================
